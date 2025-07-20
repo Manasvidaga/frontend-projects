@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Add this button near the stats container -->
+<button id="themeToggle">🌓</button>
+        <div class="stats-container">
+            <div class="details">
+                <h1>Todo App</h1>
+                <p>Keep it up!</p>
+                <div id="progressBar">
+                    <div id="progress"></div>
+                </div>
+            </div>
+            <div class="stats-number">
+                <p id="numbers">0/0</p>
+            </div>
+        </div>
+        <form id="taskForm">
+            <input type="text" id="taskInput" placeholder="Write your task" required>
+            <input type="date" id="dueDate">
+            <select id="priority">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+            </select>
+            <button type="submit" id="newTask">+</button>
+        </form>
+        <div class="filters">
+            <button id="filterAll" class="active">All</button>
+            <button id="filterActive">Active</button>
+            <button id="filterCompleted">Completed</button>
+        </div>
+        <!-- Add after filters -->
+<input type="text" id="searchInput" style="margin-bottom: 15px;min-width:460px"  placeholder="Search tasks...">
+        <ul class="task-list" id="task-list"></ul>
+    </div>
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --background: #040b53;
+    --secondaryBackground: #1d2358;
+    --text: #fff;
+    --purple: #828dff;
+    --teal: #24feee;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+}
+.light-mode {
+    --background: wheat;
+    --secondaryBackground: #e7e2d2ec;
+    --text: #333333;
+    --purple: #6a5acd;
+    --teal: #20b2aa;
+}
+
+#themeToggle {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Stats Container */
+.stats-container {
+    display: flex;
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px solid var(--purple);
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    background-color: var(--secondaryBackground);
+}
+
+.details {
+    flex: 1;
+}
+
+.details h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.details p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+#progressBar {
+    width: 100%;
+    height: 8px;
+    background-color: var(--background);
+    border-radius: 10px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+#progress {
+    height: 100%;
+    background-color: var(--teal);
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.stats-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#numbers {
+    width: 70px;
+    height: 70px;
+    background-color: var(--purple);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Task Form */
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px 15px;
+    background: var(--secondaryBackground);
+    border: 1px solid var(--purple);
+    border-radius: 8px;
+    outline: none;
+    color: var(--text);
+    font-size: 14px;
+}
+
+input[type="date"] {
+    padding: 12px;
+    background: var(--secondaryBackground);
+    border: 1px solid var(--purple);
+    border-radius: 8px;
+    color: var(--text);
+    outline: none;
+    font-size: 14px;
+}
+
+select {
+    padding: 12px;
+    background: var(--secondaryBackground);
+    border: 1px solid var(--purple);
+    border-radius: 8px;
+    color: var(--text);
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button[type="submit"] {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--purple);
+    color: var(--text);
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+     padding:16px;
+}
+
+button[type="submit"]:hover {
+    transform: scale(1.05);
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filters button {
+    padding: 8px 16px;
+    background: transparent;
+    border: 1px solid var(--purple);
+    border-radius: 20px;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.filters button.active {
+    background: var(--purple);
+    color: var(--background);
+}
+
+.filters button:hover {
+    background: rgba(130, 141, 255, 0.2);
+}
+
+/* Task List */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    width: 100%;
+}
+
+.taskItem {
+    width: 100%;
+    display: flex;
+    background-color: var(--secondaryBackground);
+    padding: 15px;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.taskItem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.task input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.task p {
+    flex: 1;
+    word-break: break-word;
+}
+
+.completed p {
+    text-decoration: line-through;
+    color: var(--teal);
+    opacity: 0.7;
+}
+
+.due-date {
+    font-size: 12px;
+    color: var(--teal);
+    margin-left: 10px;
+    opacity: 0.9;
+}
+
+.priority {
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-left: 10px;
+}
+
+.priority.high {
+    background: #ff6b6b;
+    color: #fff;
+}
+
+.priority.medium {
+    background: #ffd166;
+    color: #000;
+}
+
+.priority.low {
+    background: #06d6a0;
+    color: #000;
+}
+.icons {
+    display: flex;
+    gap: 10px;
+}
+
+.icons img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    opacity: 0.7;
+}
+
+.icons img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
